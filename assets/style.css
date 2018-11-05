@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Assistant");
+
+:root {
+  --primaryColor: #61646d;
+  --primaryFont: 'Assistant';
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html{
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Assistant';
+	background: #fff;
+	padding: 50px;
+}
+
+input{
+	font-family: 'Assistant';
+}
+
+.container{
+	width: 100%;
+	margin-top: 25px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container div{
+	width: 700px;
+	display: flex;
+	margin: 0 0 20px 0;
+}
+
+.addcity_div input{
+	border-radius: .125rem;
+	border: none;
+	
+}
+
+.addcity_div input[type=text]{
+	width: calc(100% - 50px);
+	background-color: #fff;
+	color: #42454e;
+	border-bottom: solid 1px #949494;
+	font-size: 22px;
+}
+
+.addcity_div input[type=submit]{
+	width: 50px;
+	cursor: pointer;
+	font-weight: bold;
+	color: #000;
+	border-bottom: solid 1px #949494;
+}
+
+.search_div{
+	justify-content: center;
+}
+
+.search_div input{
+	border-radius: 15px;
+	border: solid 1px;
+	padding: 2px 5px;
+	text-align: center;
+}
+
+.citylist_div ul{
+	list-style: none;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.citylist_div ul li{
+	width: 200px;
+	height: 150px;
+	border: solid 1px;
+    display: inline-block;
+    vertical-align: top;
+	margin: 10px;
+}
+
+.citylist_div ul li span{
+	display: block;
+}
+
+.list_cityname{
+	position: relative;
+	font-weight: 700;
+	padding-left: 20px;
+	top: 10px;
+	font-size: 22px;
+}
+
+.list_forecast{
+	position: relative;
+	padding-left: 20px;
+	top: 45px;
+	font-size: 18px;
+}
+
+.list_celsius{
+	position: relative;
+	font-weight: 700;
+	top: 45px;
+	padding-left: 20px;
+	font-size: 35px;
+}
+
+.list_delete {
+	position: relative;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+	right: 15px;
+	z-index: 2;
+}
+
+.list_delete:hover,
+.list_delete:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
