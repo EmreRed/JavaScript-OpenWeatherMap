@@ -103,8 +103,9 @@ input{
 	margin: 10px;
 	box-shadow: 0 6px 10px -5px #777;
 	border-radius: 4px;
-	background-color: #9cb6c6;
 	color: white;
+	animation-name: anim1;
+    animation-duration: 0.2s;	
 }
 
 .citylist_div ul li span{
@@ -203,4 +204,12 @@ input{
 @keyframes anim2 {
     from {top: 0px;opacity: 1;}
     to {top: -15px;opacity: 0;}
+}
+
+.haze{
+	background-color: #9cb6c6;
+}
+
+.clear{
+	background-color: #5babdd;
 }
