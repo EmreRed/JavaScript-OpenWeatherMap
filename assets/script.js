@@ -94,6 +94,7 @@ function searchfound(b){
 			$("#search_info").removeClass('err_out');
 			$("#search_info").html('No Results');
 			$("#search_info").addClass('err_in');
+			setInterval(function(){searchfound(false);}, 3000);
 		}else{
 			$("#search_info").removeClass('err_in');
 			$("#search_info").addClass('err_out');
@@ -108,6 +109,7 @@ function cityfound(s,b){
 			$("#add_info").removeClass('err_out');
 			$("#add_info").html(s);
 			$("#add_info").addClass('err_in');
+			setInterval(function(){cityfound('',false);}, 3000);
 		}else{
 			$("#add_info").removeClass('err_in');
 			$("#add_info").addClass('err_out');
