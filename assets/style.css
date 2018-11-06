@@ -34,7 +34,9 @@ input{
 }
 
 .container div{
-	width: 700px;
+	width: 100%;
+	max-width: 950px;
+	min-width: 270px;
 	display: flex;
 	margin: 0 0 20px 0;
 }
