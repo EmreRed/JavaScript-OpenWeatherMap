@@ -9,11 +9,14 @@
 <body>
 <div class="container">
 <div class="addcity_div">
+<div>
 	<input type="text" id="addcity" placeholder="Enter city name here...">
 	<input type="submit" id="addcity_button" value="ADD">
 </div>
+</div>
 <div class="search_div">
-	<input type="text" id="search" placeholder="Search">
+	<input type="text" id="search" placeholder="Search" autocomplete="off">
+	<span id="search_info" class="search_error"></span>
 </div>
 <div class="citylist_div">
 	<ul>
