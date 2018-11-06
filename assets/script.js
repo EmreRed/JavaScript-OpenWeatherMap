@@ -8,6 +8,7 @@ if(typeof apiKey === 'undefined'){
 
 function addCity(query, b){
 	"use strict";
+    cityfound('',false);
 	$.getJSON(apiUrl + 'q=' + query + '&appid=' + apiKey, function(data) {
 		if(data.cod === 200){
 			if(!cities.includes(data.name) || !b){
@@ -16,24 +17,27 @@ function addCity(query, b){
 				$('#addcity').val('');
 				$('#addcity').focus();
 			}else{
-				alert('Bu şehir zaten eklendi !');
+        		cityfound('City already added',true);
 			}
 		}else if(data.cod === 404){
-			alert('City not found');
+			cityfound('City not found',true);
 		}
 	}).fail(function(jqXHR) {
     if (jqXHR.status === 404) {
-        alert("City Not Found");
+        cityfound('City not found',true);
     }
 });
 }
 
 cities.forEach(function(element) {
+	"use strict";
 	addCity(element, false);
 });
 
 $('#addcity').keyup(function(e){
 	"use strict";
+	cityfound('',false);
+	searchfound(false);
     if(e.keyCode === 13)
     {
         addCity($(this).val(), true);
@@ -47,13 +51,21 @@ $('#addcity_button').on('click', function(){
 
 $("#search").keyup(function () {
     var filter = $(this).val();
+	var count = 0;
+	cityfound('',false);
     $(".citylist_div ul li").each(function () {
         if ($(this).text().search(new RegExp(filter, "i")) < 0) {
             $(this).hide();
         } else {
-            $(this).show()
+            $(this).show();
+			count++;
         }
     });
+		if(count===0){
+			searchfound(true);
+		}else{
+			searchfound(false);
+		}
 });
 
 $(document).on('click','.list_delete',function(){
@@ -70,3 +82,32 @@ $(document).on('click','.list_delete',function(){
 	});
     $(this).closest('li').remove();
 });
+
+function searchfound(b){
+	"use strict";
+	if(b){
+			if(!$('#search_info').length){
+				$(".search_div").append('<span id="search_info" class="search_error"></span>');				
+			}
+			$("#search_info").removeClass('err_out');
+			$("#search_info").html('No Results');
+			$("#search_info").addClass('err_in');
+		}else{
+			$("#search_info").removeClass('err_in');
+			$("#search_info").addClass('err_out');
+		}
+}
+function cityfound(s,b){
+	"use strict";
+		if(b){
+			if(!$('#add_info').length){
+				$(".addcity_div").append('<span id="add_info" class="add_error"></span>');				
+			}
+			$("#add_info").removeClass('err_out');
+			$("#add_info").html(s);
+			$("#add_info").addClass('err_in');
+		}else{
+			$("#add_info").removeClass('err_in');
+			$("#add_info").addClass('err_out');
+		}
+}

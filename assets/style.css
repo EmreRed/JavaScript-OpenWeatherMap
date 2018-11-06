@@ -18,7 +18,7 @@ html{
 body{
 	font-family: 'Assistant';
 	background: #fff;
-	padding: 50px;
+	padding: 50px;	
 }
 
 input{
@@ -37,6 +37,16 @@ input{
 	width: 700px;
 	display: flex;
 	margin: 0 0 20px 0;
+}
+
+.addcity_div{
+	flex-direction: column;
+}
+
+.addcity_div div{
+	display: flex;
+	flex-direction: row;
+	margin: 0;
 }
 
 .addcity_div input{
@@ -63,13 +73,16 @@ input{
 
 .search_div{
 	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 }
 
 .search_div input{
-	border-radius: 15px;
+	border-radius: 5px;
 	border: solid 1px;
 	padding: 2px 5px;
 	text-align: center;
+	width: 200px;
 }
 
 .citylist_div ul{
@@ -82,10 +95,14 @@ input{
 .citylist_div ul li{
 	width: 200px;
 	height: 150px;
-	border: solid 1px;
+	padding: 1px;
     display: inline-block;
     vertical-align: top;
 	margin: 10px;
+	box-shadow: 0 6px 10px -5px #777;
+	border-radius: 4px;
+	background-color: #9cb6c6;
+	color: white;
 }
 
 .citylist_div ul li span{
@@ -98,6 +115,7 @@ input{
 	padding-left: 20px;
 	top: 10px;
 	font-size: 22px;
+	text-shadow: 1px 1px 10px rgba(0,0,0,0.50);
 }
 
 .list_forecast{
@@ -105,6 +123,7 @@ input{
 	padding-left: 20px;
 	top: 45px;
 	font-size: 18px;
+	text-shadow: 1px 1px 5px rgba(0,0,0,0.50);
 }
 
 .list_celsius{
@@ -113,16 +132,17 @@ input{
 	top: 45px;
 	padding-left: 20px;
 	font-size: 35px;
+	text-shadow: 1px 1px 10px rgba(0,0,0,0.50);
 }
 
 .list_delete {
 	position: relative;
-    color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 	right: 15px;
 	z-index: 2;
+	color: white;
 }
 
 .list_delete:hover,
@@ -130,4 +150,55 @@ input{
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.search_error{
+	position: relative;
+	display: block;
+	background: #fb2d2dcc;
+	padding: 1px;
+	border-radius: 1px 1px 5px 5px;
+	width: 190px;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	z-index: -1;
+	opacity: 0;
+}
+
+.add_error{
+	position: relative;
+	display: block;
+	background: #fb2d2dcc;
+	padding: 1px;
+	border-radius: 1px 1px 5px 5px;
+	width: 100%;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	z-index: -1;
+	opacity: 0;
+	font-size: 20px;
+}
+
+.err_in{
+	opacity: 1;
+	animation-name: anim1;
+    animation-duration: 0.2s;	
+}
+
+.err_out{
+	opacity: 0;
+	animation-name: anim2;
+    animation-duration: 0.2s;	
+}
+
+@keyframes anim1 {
+    from {top: -15px;opacity: 0;}
+    to {top: 0px;opacity: 1;}
+}
+
+@keyframes anim2 {
+    from {top: 0px;opacity: 1;}
+    to {top: -15px;opacity: 0;}
 }
