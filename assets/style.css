@@ -16,13 +16,13 @@ html{
 }
 
 body{
-	font-family: 'Assistant';
+	font-family: var(--primaryFont);
 	background: #fff;
 	padding: 50px;	
 }
 
 input{
-	font-family: 'Assistant';
+	font-family: var(--primaryFont);
 }
 
 .container{
@@ -33,7 +33,7 @@ input{
 	align-items: center;
 }
 
-.container div{
+.row{
 	width: 100%;
 	max-width: 950px;
 	min-width: 270px;
