@@ -108,17 +108,20 @@ input{
     animation-duration: 0.2s;	
 }
 
-.citylist_div ul li span{
+.list_item{
 	display: block;
+	position: relative;
+	text-shadow: 1px 1px 5px rgba(0,0,0,0.50);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .list_cityname{
-	position: relative;
 	font-weight: 700;
 	padding-left: 20px;
 	top: 10px;
 	font-size: 22px;
-	text-shadow: 1px 1px 5px rgba(0,0,0,0.50);
 	max-height: 28px;
 	white-space: nowrap;
 	overflow: hidden;
@@ -126,24 +129,19 @@ input{
 }
 
 .list_forecast{
-	position: relative;
 	padding-left: 20px;
 	top: 45px;
 	font-size: 18px;
-	text-shadow: 1px 1px 5px rgba(0,0,0,0.50);
 }
 
 .list_celsius{
-	position: relative;
 	font-weight: 700;
 	top: 45px;
 	padding-left: 20px;
 	font-size: 35px;
-	text-shadow: 1px 1px 10px rgba(0,0,0,0.50);
 }
 
 .list_delete {
-	position: relative;
     float: right;
     font-size: 28px;
     font-weight: bold;

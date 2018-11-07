@@ -15,7 +15,7 @@ function addCity(query, b){
 				cities.push(data.name);
 				var li_background = 'haze';
 				if(data.weather[0].main.toLowerCase()==='clear'){li_background = 'clear';}
-				$(".citylist_div ul").append('<li id="' + data.id + '" class="' + li_background + '"><span class="list_delete">×</span><span class="list_cityname">' + data.name + ', ' + data.sys.country + '</span><span class="list_forecast">' + data.weather[0].main + '</span><span class="list_celsius">' + parseInt(data.main.temp) + ' °C</span></li>');
+				$(".citylist_div ul").append('<li id="' + data.id + '" class="' + li_background + '"><span class="list_item list_delete">×</span><span class="list_item list_cityname">' + data.name + ', ' + data.sys.country + '</span><span class="list_item list_forecast">' + data.weather[0].main + '</span><span class="list_item list_celsius">' + parseInt(data.main.temp) + ' °C</span></li>');
 				$('#addcity').val('');
 				$('#addcity').focus();
 			}else{
